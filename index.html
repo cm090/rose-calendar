@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Canon's Calendar</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="navbar-title">Canon's Calendar</div>
+    </div>
+    <div class="container">
+        <div class="days-selector">
+            <div class="chip" data-day="1">
+                <span class="chip-text">Monday</span>
+            </div>
+            <div class="chip" data-day="2">
+                <span class="chip-text">Tuesday</span>
+            </div>
+            <div class="chip" data-day="3">
+                <span class="chip-text">Wednesday</span>
+            </div>
+            <div class="chip" data-day="4">
+                <span class="chip-text">Thursday</span>
+            </div>
+            <div class="chip" data-day="5">
+                <span class="chip-text">Friday</span>
+            </div>
+        </div>
+        <div class="calendar">
+            <div class="card busy" data-start="9">
+                <div class="number">
+                    <span>1</span>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">CSSE232</h3>
+                    <h3 class="card-description">9:00 AM</h3>
+                </div>
+            </div>
+            <div class="card busy" data-start="10">
+                <div class="number">
+                    <span>2</span>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">BIO101</h3>
+                    <h3 class="card-description">10:00 AM</h3>
+                </div>
+            </div>
+            <div class="card" data-start="11">
+                <div class="number">
+                    <span>0</span>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Free</h3>
+                    <h3 class="card-description">11:00 AM</h3>
+                </div>
+            </div>
+            <div class="card busy" data-start="12">
+                <div class="number">
+                    <span>3</span>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">MA276</h3>
+                    <h3 class="card-description">12:00 PM</h3>
+                </div>
+            </div>
+            <div class="card busy" style="--size: 2;" data-start="13">
+                <div class="number">
+                    <span>4</span>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">CSSE280</h3>
+                    <h3 class="card-description">1:00 PM</h3>
+                </div>
+            </div>
+            <div class="card busy" style="--size: 2;" data-start="15">
+                <div class="number">
+                    <span>5</span>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">CSSE220</h3>
+                    <h3 class="card-description">3:00 PM</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="./script.js"></script>
+</body>
+
+</html>

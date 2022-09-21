@@ -1,0 +1,151 @@
+html {
+    --content-bg: #1a1c1a;
+    --nav-bg: #242b24;
+    --selected: #3d4b3d;
+    --card-busy: #202521;
+    --card-free: #434842;
+    --number-bg: #96d79b;
+    --text: #ffffff;
+    --text-secondary: #e2e3de;
+    --text-invert: #000000;
+    --border: #8c928a;
+    --size: 1;
+}
+
+body {
+    margin: 0;
+    background-color: var(--content-bg);
+    font-family: 'Roboto', sans-serif;
+}
+
+.navbar {
+    position: fixed;
+    height: 74px;
+    width: 100vw;
+    background-color: var(--nav-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 2px 6px 2px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+}
+
+.container {
+    padding-top: 85px;
+}
+
+.navbar-title {
+    color: var(--text);
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.days-selector {
+    display: flex;
+    align-items: flex-start;
+    overflow-x: scroll;
+    -ms-overflow-style: none;
+}
+
+.days-selector::-webkit-scrollbar {
+    display: none;
+}
+
+.days-selector>.chip {
+    cursor: pointer;
+    display: flex;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding: 6px 16px;
+    margin: 0 8px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text);
+}
+
+.days-selector>.chip.selected {
+    background-color: var(--selected);
+    border-color: var(--selected);
+}
+
+.days-selector span {
+    font-size: 16px;
+}
+
+.chip-text {
+    font-size: 14px !important;
+}
+
+.selected .chip-text {
+    margin-left: 2px;
+}
+
+.calendar {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin: 20px auto;
+    max-width: 400px;
+}
+
+.card {
+    max-width: 390px;
+    margin: 5px auto;
+    border-radius: 12px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    background-color: var(--card-free);
+    line-height: 15px;
+    height: calc(var(--size) * 86px);
+}
+
+.card.busy {
+    background-color: var(--card-busy);
+}
+
+.card.current .number {
+    background-color: #16353c !important;
+}
+
+.card.current .number span {
+    color: var(--text) !important;
+}
+
+.card-content {
+    margin: auto 0;
+}
+
+.card-title {
+    color: var(--text);
+}
+
+.card-description {
+    color: var(--text-secondary);
+    font-weight: normal;
+}
+
+.number {
+    border-radius: 50%;
+    background-color: var(--number-bg);
+    height: 60px;
+    width: 60px;
+    margin: auto 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.number span {
+    font-size: 25px;
+    font-weight: bold;
+    color: var(--text-invert);
+}
+
+@media (max-width: 420px) {
+    .calendar {
+        margin: 20px 10px;
+    }
+
+    .card {
+        margin: 5px;
+    }
+}
