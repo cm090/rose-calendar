@@ -84,6 +84,7 @@ body {
     border-radius: 12px;
     margin: 20px auto;
     max-width: 400px;
+    box-shadow: 0px 2px 6px 2px rgba(0, 0, 0, 0.15);
 }
 
 .card {
@@ -92,21 +93,22 @@ body {
     border-radius: 12px;
     display: grid;
     grid-template-columns: 1fr 2fr;
-    background-color: var(--card-free);
+    background-color: var(--card-busy);
     line-height: 15px;
     min-height: 86px;
     height: calc(var(--size) * 86px);
+    box-shadow: 0px 2px 6px 2px rgba(0, 0, 0, 0.15);
 }
 
-.card.busy {
-    background-color: var(--card-busy);
+.card.current {
+    background-color: var(--card-free);
 }
 
-.card.current .number {
+.card:not(.busy) .number {
     background-color: #16353c !important;
 }
 
-.card.current .number span {
+.card:not(.busy) .number span {
     color: var(--text) !important;
 }
 
@@ -132,6 +134,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: 0px 2px 6px 2px rgba(0, 0, 0, 0.15);
 }
 
 #infoIcon {

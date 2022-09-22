@@ -13,7 +13,7 @@ const classes = {
             "busy": true
         },
         "3": {
-            "name": "Free",
+            "name": "Lunch",
             "start": "11:00",
             "end": "12:00",
             "busy": false
@@ -57,7 +57,7 @@ const classes = {
             "busy": true
         },
         "3": {
-            "name": "Free",
+            "name": "Lunch",
             "start": "11:00",
             "end": "12:00",
             "busy": false
@@ -139,7 +139,7 @@ const classes = {
             "busy": true
         },
         "3": {
-            "name": "Free",
+            "name": "Lunch",
             "start": "11:00",
             "end": "12:00",
             "busy": false
@@ -177,12 +177,18 @@ const classes = {
             "busy": false
         },
         "3": {
+            "name": "Lunch",
+            "start": "11:00",
+            "end": "12:00",
+            "busy": false
+        },
+        "4": {
             "name": "MA276",
             "start": "12:00",
             "end": "13:00",
             "busy": true
         },
-        "4": {
+        "5": {
             "name": "CSSE280",
             "start": "13:00",
             "end": "15:00",

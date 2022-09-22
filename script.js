@@ -25,6 +25,7 @@ app.useCurrentDate = (skip) => {
     if (!skip) {
         app.filters[d.getDay() - 1].click();
         app.filters[d.getDay() - 1].scrollIntoView();
+        window.scrollTo(0, 0);
     }
     app.events.forEach((e) => e.classList.remove('current'));
     for (let i = app.events.length - 1; i >= 0; i--) {
