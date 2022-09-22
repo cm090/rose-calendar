@@ -1,163 +1,193 @@
-var app = {};
+let app = {};
 
 app.classes = {
     "1": {
         "1": {
             "name": "CSSE232",
-            "time": "9",
-            "size": 1,
+            "start": "9:00",
+            "end": "10:00",
             "busy": true
         },
         "2": {
             "name": "BIO101",
-            "time": "10",
-            "size": 1,
+            "start": "10:00",
+            "end": "11:00",
             "busy": true
         },
         "3": {
             "name": "Free",
-            "time": "11",
-            "size": 1,
+            "start": "11:00",
+            "end": "12:00",
             "busy": false
         },
         "4": {
             "name": "MA276",
-            "time": "12",
-            "size": 1,
+            "start": "12:00",
+            "end": "13:00",
             "busy": true
         },
         "5": {
             "name": "Free",
-            "time": "13",
-            "size": 2,
+            "start": "13:00",
+            "end": "15:00",
             "busy": false
         },
         "6": {
             "name": "CSSE220 TA",
-            "time": "15",
-            "size": 2,
+            "start": "15:00",
+            "end": "17:00",
+            "busy": true
+        },
+        "7": {
+            "name": "CSSE220 Meeting",
+            "start": "17:10",
+            "end": "18:00",
             "busy": true
         }
     },
     "2": {
         "1": {
             "name": "CSSE232",
-            "time": "9",
-            "size": 1,
+            "start": "9:00",
+            "end": "10:00",
             "busy": true
         },
         "2": {
             "name": "BIO101",
-            "time": "10",
-            "size": 1,
+            "start": "10:00",
+            "end": "11:00",
             "busy": true
         },
         "3": {
             "name": "Free",
-            "time": "11",
-            "size": 1,
+            "start": "11:00",
+            "end": "12:00",
             "busy": false
         },
         "4": {
             "name": "MA276",
-            "time": "12",
-            "size": 1,
+            "start": "12:00",
+            "end": "13:00",
             "busy": true
         },
         "5": {
             "name": "CSSE280",
-            "time": "13",
-            "size": 2,
+            "start": "13:00",
+            "end": "15:00",
             "busy": true
         },
         "6": {
             "name": "CSSE220 TA",
-            "time": "15",
-            "size": 2,
+            "start": "15:00",
+            "end": "17:00",
+            "busy": true
+        },
+        "7": {
+            "name": "Free",
+            "start": "17:00",
+            "end": "19:30",
+            "busy": false
+        },
+        "8": {
+            "name": "Concert Band",
+            "start": "19:30",
+            "end": "21:00",
             "busy": true
         }
     },
     "3": {
         "1": {
             "name": "CSSE232",
-            "time": "9",
-            "size": 2,
+            "start": "9:00",
+            "end": "10:00",
             "busy": true
         },
         "2": {
             "name": "Free",
-            "time": "10",
-            "size": 1,
+            "start": "10:00",
+            "end": "11:00",
             "busy": false
         },
         "3": {
             "name": "BIO101",
-            "time": "11",
-            "size": 3,
+            "start": "11:00",
+            "end": "14:00",
+            "busy": true
+        },
+        "4": {
+            "name": "Free",
+            "start": "14:00",
+            "end": "19:30",
+            "busy": false
+        },
+        "5": {
+            "name": "CSSE220 Office Hours",
+            "start": "19:30",
+            "end": "21:30",
             "busy": true
         }
     },
     "4": {
         "1": {
             "name": "CSSE232",
-            "time": "9",
-            "size": 1,
+            "start": "9:00",
+            "end": "10:00",
             "busy": true
         },
         "2": {
             "name": "BIO101",
-            "time": "10",
-            "size": 1,
+            "start": "10:00",
+            "end": "11:00",
             "busy": true
         },
         "3": {
             "name": "Free",
-            "time": "11",
-            "size": 1,
+            "start": "11:00",
+            "end": "12:00",
             "busy": false
         },
         "4": {
             "name": "MA276",
-            "time": "12",
-            "size": 1,
+            "start": "12:00",
+            "end": "13:00",
             "busy": true
         },
         "5": {
             "name": "CSSE280",
-            "time": "13",
-            "size": 2,
+            "start": "13:00",
+            "end": "15:00",
             "busy": true
         },
         "6": {
             "name": "CSSE220 TA",
-            "time": "15",
-            "size": 2,
+            "start": "15:00",
+            "end": "17:00",
             "busy": true
         }
     },
     "5": {
         "1": {
             "name": "CSSE232",
-            "time": "9",
-            "size": 1,
+            "start": "9:00",
+            "end": "10:00",
             "busy": true
         },
         "2": {
             "name": "Free",
-            "time": "10",
-            "size": 2,
+            "start": "10:00",
+            "end": "11:00",
             "busy": false
         },
         "3": {
             "name": "MA276",
-            "time": "12",
-            "size": 1,
+            "start": "12:00",
+            "end": "13:00",
             "busy": true
         },
         "4": {
             "name": "CSSE280",
-            "time": "13",
-            "size": 2,
+            "start": "13:00",
+            "end": "15:00",
             "busy": true
         }
     }
@@ -186,33 +216,38 @@ app.useCurrentDate = (skip) => {
     const d = new Date();
     if (!skip)
         app.filters[d.getDay() - 1].click();
-    app.events.forEach((e) => {
-        if (e.dataset.start <= d.getHours() && e.clientHeight / 86 + parseInt(e.dataset.start) >= d.getHours()) {
-            e.classList.add('current');
-        } else {
-            e.classList.remove('current');
+    app.events.forEach((e) => e.classList.remove('current'));
+    for (let i = app.events.length - 1; i >= 0; i--) {
+        if (app.events[i].dataset.start <= d.getHours() && app.events[i].dataset.end >= d.getHours()) {
+            app.events[i].classList.add('current');
+            return;
         }
-    });
+    }
 }
 
 app.updateView = (day) => {
     const data = document.querySelector('.calendar');
     data.innerHTML = '';
     if (!app.classes[day]) return;
-    for (var i = 1; i <= Object.keys(app.classes[day]).length; i++) {
+    for (let i = 1; i <= Object.keys(app.classes[day]).length; i++) {
         const el = document.createElement('div');
         el.classList.add('card');
         if (app.classes[day][i]["busy"])
-            el.classList.add('busy'); el.setAttribute('data-start', app.classes[day][i]["time"]);
-        el.setAttribute('style', '--size:' + app.classes[day][i]["size"]);
+            el.classList.add('busy');
+        const startNum = parseInt(app.classes[day][i]["start"].split(':')[0]) + parseInt(app.classes[day][i]["start"].split(':')[1]) / 60;
+        const endNum = parseInt(app.classes[day][i]["end"].split(':')[0]) + parseInt(app.classes[day][i]["end"].split(':')[1]) / 60;
+        el.setAttribute('data-start',startNum);
+        el.setAttribute('data-end', endNum);
+        el.setAttribute('style', '--size:' + (endNum - startNum));
         const num = document.createElement('div');
         num.classList.add('number');
         num.innerHTML = '<span>' + i + '</span>';
         el.appendChild(num);
         const content = document.createElement('div');
         content.classList.add('card-content');
-        const time = (parseInt(app.classes[day][i]["time"]) > 12) ? (parseInt(app.classes[day][i]["time"]) - 12) + ":00 PM" : (parseInt(app.classes[day][i]["time"])) + ":00 AM";
-        content.innerHTML = `<h3 class="card-title">${app.classes[day][i]["name"]}</h3><h3 class="card-description">${time}</h3>`;
+        const start = (startNum > 12) ? (Math.floor(startNum) - 12) + ':' + String((startNum - Math.floor(startNum)) * 60).padStart(2, '0').split('.')[0] + " PM" : Math.floor(startNum) + ':' + String((startNum - Math.floor(startNum)) * 60).padStart(2, '0').split('.')[0] + " AM";
+        const end = (endNum > 12) ? (Math.floor(endNum) - 12) + ':' + String((endNum - Math.floor(endNum)) * 60).padStart(2, '0').split('.')[0] + " PM" : Math.floor(endNum) + ':' + String((endNum - Math.floor(endNum)) * 60).padStart(2, '0').split('.')[0] + " AM";
+        content.innerHTML = `<h3 class="card-title">${app.classes[day][i]["name"]}</h3><h3 class="card-description">${start} - ${end}</h3>`;
         el.appendChild(content);
         data.appendChild(el);
     }

@@ -95,6 +95,7 @@ body {
     grid-template-columns: 1fr 2fr;
     background-color: var(--card-free);
     line-height: 15px;
+    min-height: 86px;
     height: calc(var(--size) * 86px);
 }
 
