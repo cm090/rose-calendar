@@ -22,8 +22,10 @@ app.addListeners = () => {
 
 app.useCurrentDate = (skip) => {
     const d = new Date();
-    if (!skip)
+    if (!skip) {
         app.filters[d.getDay() - 1].click();
+        app.filters[d.getDay() - 1].scrollIntoView();
+    }
     app.events.forEach((e) => e.classList.remove('current'));
     for (let i = app.events.length - 1; i >= 0; i--) {
         if (app.events[i].dataset.start <= d.getHours() && app.events[i].dataset.end >= d.getHours()) {
