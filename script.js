@@ -45,8 +45,8 @@ app.updateView = (day) => {
         el.classList.add('card');
         if (app.classes[day][i]["busy"])
             el.classList.add('busy');
-        const startNum = parseInt(app.classes[day][i]["start"].split(':')[0]) + parseInt(app.classes[day][i]["start"].split(':')[1]) / 60;
-        const endNum = parseInt(app.classes[day][i]["end"].split(':')[0]) + parseInt(app.classes[day][i]["end"].split(':')[1]) / 60;
+        let startNum = parseInt(app.classes[day][i]["start"].split(':')[0]) + parseInt(app.classes[day][i]["start"].split(':')[1]) / 60;
+        let endNum = parseInt(app.classes[day][i]["end"].split(':')[0]) + parseInt(app.classes[day][i]["end"].split(':')[1]) / 60;
         el.setAttribute('data-start', startNum);
         el.setAttribute('data-end', endNum);
         el.setAttribute('style', '--size:' + (endNum - startNum));
@@ -56,6 +56,10 @@ app.updateView = (day) => {
         el.appendChild(num);
         const content = document.createElement('div');
         content.classList.add('card-content');
+        if (Math.floor(startNum) == 0 || Math.floor(startNum) == 12)
+            startNum += 12;
+        if (Math.floor(endNum) == 0 || Math.floor(endNum) == 12)
+            endNum += 12;
         const start = (startNum > 12) ? (Math.floor(startNum) - 12) + ':' + String((startNum - Math.floor(startNum)) * 60).padStart(2, '0').split('.')[0] + " PM" : Math.floor(startNum) + ':' + String((startNum - Math.floor(startNum)) * 60).padStart(2, '0').split('.')[0] + " AM";
         const end = (endNum > 12) ? (Math.floor(endNum) - 12) + ':' + String((endNum - Math.floor(endNum)) * 60).padStart(2, '0').split('.')[0] + " PM" : Math.floor(endNum) + ':' + String((endNum - Math.floor(endNum)) * 60).padStart(2, '0').split('.')[0] + " AM";
         content.innerHTML = `<h3 class="card-title">${app.classes[day][i]["name"]}</h3><h3 class="card-description">${start} - ${end}</h3>`;
