@@ -45,8 +45,8 @@ app.updateView = (day) => {
         el.classList.add('card');
         if (app.classes[day][i]["busy"])
             el.classList.add('busy');
-        const startNum = parseInt(app.classes[day][i]["start"].split(':')[0]) + parseInt(app.classes[day][i]["start"].split(':')[1]) / 60;
-        const endNum = parseInt(app.classes[day][i]["end"].split(':')[0]) + parseInt(app.classes[day][i]["end"].split(':')[1]) / 60;
+        let startNum = parseInt(app.classes[day][i]["start"].split(':')[0]) + parseInt(app.classes[day][i]["start"].split(':')[1]) / 60;
+        let endNum = parseInt(app.classes[day][i]["end"].split(':')[0]) + parseInt(app.classes[day][i]["end"].split(':')[1]) / 60;
         el.setAttribute('data-start', startNum);
         el.setAttribute('data-end', endNum);
         el.setAttribute('style', '--size:' + (endNum - startNum));
