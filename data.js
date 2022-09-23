@@ -96,7 +96,7 @@ const classes = {
     "3": {
         "1": {
             "name": "CSSE232",
-            "start": "9:00",
+            "start": "8:00",
             "end": "10:00",
             "busy": true
         },
