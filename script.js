@@ -29,7 +29,7 @@ app.useCurrentDate = (skip) => {
     }
     app.events.forEach((e) => e.classList.remove('current'));
     for (let i = app.events.length - 1; i >= 0; i--) {
-        if (app.events[i].dataset.start <= d.getHours() && app.events[i].dataset.end >= d.getHours()) {
+        if (app.events[i].dataset.start <= (d.getHours() + d.getMinutes()/60) && app.events[i].dataset.end > (d.getHours() + d.getMinutes()/60)) {
             app.events[i].classList.add('current');
             return;
         }
