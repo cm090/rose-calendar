@@ -1,9 +1,11 @@
 let app = {};
-
 app.classes = classes;
 app.filters = document.querySelectorAll('.days-selector > .chip');
 app.events = document.querySelectorAll('.calendar > .card');
 
+/**
+ * Adding an event listener to each of the filters.
+*/
 app.addListeners = () => {
     app.filters.forEach((item) => {
         item.onclick = () => {
@@ -20,22 +22,29 @@ app.addListeners = () => {
     });
 }
 
+/**
+ * If skip == true, check the current time and select the corresponding filter.
+ * Add a class to the event that is currently happening.
+*/
 app.useCurrentDate = (skip) => {
     const d = new Date();
-    if (!skip) {
+    if (!skip && app.filters[d.getDay() - 1]) {
         app.filters[d.getDay() - 1].click();
         app.filters[d.getDay() - 1].scrollIntoView();
         window.scrollTo(0, 0);
     }
     app.events.forEach((e) => e.classList.remove('current'));
     for (let i = app.events.length - 1; i >= 0; i--) {
-        if (app.events[i].dataset.start <= (d.getHours() + d.getMinutes()/60) && app.events[i].dataset.end > (d.getHours() + d.getMinutes()/60)) {
+        if (app.events[i].dataset.start <= (d.getHours() + d.getMinutes() / 60) && app.events[i].dataset.end > (d.getHours() + d.getMinutes() / 60)) {
             app.events[i].classList.add('current');
             return;
         }
     }
 }
 
+/**
+ * Creating the cards for the calendar.
+*/
 app.updateView = (day) => {
     const data = document.querySelector('.calendar');
     data.innerHTML = '';
@@ -70,6 +79,9 @@ app.updateView = (day) => {
     app.useCurrentDate(true);
 }
 
+/**
+ * The main function of the app. It adds the event listeners to the filters, selects the current day, and adds the event listeners to the info icon and modal.
+*/
 app.main = () => {
     app.addListeners();
     app.useCurrentDate();

@@ -1,3 +1,9 @@
+/**
+ * 
+ * A JavaScript object that contains the data for the calendar. Sorted by day from Sunday (0) to Saturday (6).
+ * View structure below for required data types.
+ * 
+*/
 const classes = {
     "1": {
         "1": {
