@@ -117,18 +117,6 @@ const classes = {
             "start": "11:00",
             "end": "14:00",
             "busy": true
-        },
-        "4": {
-            "name": "Free",
-            "start": "14:00",
-            "end": "19:30",
-            "busy": false
-        },
-        "5": {
-            "name": "CSSE220 Office Hours",
-            "start": "19:30",
-            "end": "21:30",
-            "busy": true
         }
     },
     "4": {
