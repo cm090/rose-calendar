@@ -2,6 +2,7 @@ let app = {};
 app.classes = classes;
 app.filters = document.querySelectorAll('.days-selector > .chip');
 app.events = document.querySelectorAll('.calendar > .card');
+const TIME_ZONE = 'America/Indianapolis';
 
 /**
  * Adding an event listener to each of the filters.
@@ -28,6 +29,9 @@ app.addListeners = () => {
 */
 app.useCurrentDate = (skip) => {
     const d = new Date();
+    const local = d.toLocaleString();
+    const req = d.toLocaleString('en', { timeZone: TIME_ZONE });
+    app.offset = parseInt(local.split(' ')[1].split(':')[0]) - parseInt(req.split(' ')[1].split(':')[0]);
     if (!skip && app.filters[d.getDay() - 1]) {
         app.filters[d.getDay() - 1].click();
         app.filters[d.getDay() - 1].scrollIntoView();
@@ -56,6 +60,8 @@ app.updateView = (day) => {
             el.classList.add('busy');
         let startNum = parseInt(app.classes[day][i]["start"].split(':')[0]) + parseInt(app.classes[day][i]["start"].split(':')[1]) / 60;
         let endNum = parseInt(app.classes[day][i]["end"].split(':')[0]) + parseInt(app.classes[day][i]["end"].split(':')[1]) / 60;
+        startNum += app.offset;
+        endNum += app.offset;
         el.setAttribute('data-start', startNum);
         el.setAttribute('data-end', endNum);
         el.setAttribute('style', '--size:' + (endNum - startNum));
