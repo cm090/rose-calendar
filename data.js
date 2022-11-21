@@ -81,6 +81,12 @@ const classes = {
             "start": "8:00",
             "end": "10:00",
             "busy": true
+        },
+        "2": {
+            "name": "CSSE220 Meeting",
+            "start": "10:00",
+            "end": "11:00",
+            "busy": true
         }
     },
     "4": {
