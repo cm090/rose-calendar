@@ -7,7 +7,7 @@
 const classes = {
     "1": {
         "1": {
-            "name": "CSSE220 - TA",
+            "name": "CSSE220 TA",
             "start": "8:00",
             "end": "10:00",
             "busy": true
@@ -41,11 +41,17 @@ const classes = {
             "start": "15:00",
             "end": "16:00",
             "busy": true
+        },
+        "7": {
+            "name": "CSSE220 TA Meeting",
+            "start": "16:00",
+            "end": "17:30",
+            "busy": true
         }
     },
     "2": {
         "1": {
-            "name": "CSSE220 - TA",
+            "name": "CSSE220 TA",
             "start": "8:00",
             "end": "10:00",
             "busy": true
@@ -97,7 +103,7 @@ const classes = {
     },
     "4": {
         "1": {
-            "name": "CSSE220 - TA",
+            "name": "CSSE220 TA",
             "start": "8:00",
             "end": "10:00",
             "busy": true
