@@ -45,7 +45,7 @@ const classes = {
         "7": {
             "name": "CSSE220 TA Meeting",
             "start": "16:00",
-            "end": "17:30",
+            "end": "17:00",
             "busy": true
         }
     },
