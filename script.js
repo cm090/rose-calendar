@@ -24,7 +24,7 @@ app.addListeners = () => {
 }
 
 /**
- * If skip == true, check the current time and select the corresponding filter.
+ * If skip, check the current time and select the corresponding filter.
  * Add a class to the event that is currently happening.
 */
 app.useCurrentDate = (skip) => {
@@ -41,6 +41,7 @@ app.useCurrentDate = (skip) => {
     for (let i = app.events.length - 1; i >= 0; i--) {
         if (app.events[i].dataset.start <= (d.getHours() + d.getMinutes() / 60) && app.events[i].dataset.end > (d.getHours() + d.getMinutes() / 60)) {
             app.events[i].classList.add('current');
+            document.getElementById('rightNow').innerText = app.events[i].querySelector('.card-title').innerText;
             return;
         }
     }
