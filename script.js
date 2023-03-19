@@ -41,7 +41,8 @@ app.useCurrentDate = (skip) => {
     for (let i = app.events.length - 1; i >= 0; i--) {
         if (app.events[i].dataset.start <= (d.getHours() + d.getMinutes() / 60) && app.events[i].dataset.end > (d.getHours() + d.getMinutes() / 60)) {
             app.events[i].classList.add('current');
-            document.getElementById('rightNow').innerText = app.events[i].querySelector('.card-title').innerText;
+            if (!skip)
+                document.getElementById('rightNow').innerText = app.events[i].querySelector('.card-title').innerText;
             return;
         }
     }
