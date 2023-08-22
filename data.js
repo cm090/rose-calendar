@@ -92,5 +92,17 @@ const classes = {
       end: "10:00",
       busy: true,
     },
+    2: {
+      name: "Free",
+      start: "10:00",
+      end: "14:00",
+      busy: false,
+    },
+    3: {
+      name: "CSSE220 TA",
+      start: "14:00",
+      end: "15:30",
+      busy: true,
+    }
   },
 };
