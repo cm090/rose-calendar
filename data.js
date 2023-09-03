@@ -61,13 +61,13 @@ const classes = {
     2: {
       name: "Free",
       start: "12:00",
-      end: "19:30",
+      end: "15:00",
       busy: false,
     },
     3: {
-      name: "Concert Band",
-      start: "19:30",
-      end: "21:00",
+      name: "CSSE220 Meeting",
+      start: "15:00",
+      end: "16:00",
       busy: true,
     },
   },
