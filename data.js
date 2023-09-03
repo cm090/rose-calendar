@@ -35,7 +35,7 @@ const classes = {
     3: {
       name: "CSSE372",
       start: "13:00",
-      end: "14:00",
+      end: "15:00",
       busy: true,
     },
     4: {
@@ -56,6 +56,18 @@ const classes = {
       name: "CSSE374",
       start: "10:00",
       end: "12:00",
+      busy: true,
+    },
+    2: {
+      name: "Free",
+      start: "12:00",
+      end: "19:30",
+      busy: false,
+    },
+    3: {
+      name: "Concert Band",
+      start: "19:30",
+      end: "21:00",
       busy: true,
     },
   },
