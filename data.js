@@ -57,15 +57,9 @@ const classes = {
       busy: false,
     },
     3: {
-<<<<<<< HEAD
       name: "CSSE474",
       start: "11:00",
       end: "12:00",
-=======
-      name: "CSSE372",
-      start: "13:00",
-      end: "15:00",
->>>>>>> d798481af04deb54165ad9d911851c7f5f910c9d
       busy: true,
     },
     4: {
@@ -105,18 +99,6 @@ const classes = {
       start: "9:00",
       end: "15:00",
       busy: false,
-    },
-    2: {
-      name: "Free",
-      start: "12:00",
-      end: "15:00",
-      busy: false,
-    },
-    3: {
-      name: "CSSE220 Meeting",
-      start: "15:00",
-      end: "16:00",
-      busy: true,
     },
   },
   4: {
