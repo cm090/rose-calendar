@@ -176,7 +176,7 @@ const classes = {
       end: "15:00",
       busy: true,
     },
-    {
+    7: {
       name: "CSSE220 TA Meeting",
       start: "15:00",
       end: "16:00",
