@@ -95,10 +95,10 @@ const classes = {
   },
   3: {
     1: {
-      name: "Nothing scheduled",
-      start: "9:00",
+      name: "CSSE220 Office Hours",
+      start: "13:30",
       end: "15:00",
-      busy: false,
+      busy: true,
     },
   },
   4: {
@@ -174,6 +174,12 @@ const classes = {
       name: "CSSE490",
       start: "14:00",
       end: "15:00",
+      busy: true,
+    },
+    {
+      name: "CSSE220 TA Meeting",
+      start: "15:00",
+      end: "16:00",
       busy: true,
     },
   },
