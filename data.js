@@ -7,62 +7,38 @@
 const classes = {
   1: {
     1: {
-      name: "CSSE376",
+      name: "CSSE477",
       start: "10:00",
-      end: "11:00",
+      end: "12:00",
       busy: true,
     },
     2: {
       name: "Free",
-      start: "11:00",
+      start: "12:00",
       end: "13:00",
       busy: false,
     },
     3: {
-      name: "CSSE375",
+      name: "CSSE480",
       start: "13:00",
-      end: "15:00",
-      busy: true,
-    },
-    4: {
-      name: "Ventures",
-      start: "15:00",
-      end: "17:00",
+      end: "14:00",
       busy: true,
     },
   },
   2: {
     1: {
-      name: "CSSE373",
-      start: "8:00",
-      end: "10:00",
+      name: "CSSE480",
+      start: "13:00",
+      end: "14:00",
       busy: true,
     },
     2: {
-      name: "CSSE376",
-      start: "10:00",
-      end: "11:00",
-      busy: true,
-    },
-    3: {
-      name: "Free",
-      start: "11:00",
-      end: "13:00",
-      busy: false,
-    },
-    4: {
-      name: "CSSE375",
-      start: "13:00",
-      end: "15:00",
-      busy: true,
-    },
-    5: {
       name: "Free",
       start: "15:00",
       end: "19:30",
       busy: false,
     },
-    6: {
+    3: {
       name: "Concert Band",
       start: "19:30",
       end: "21:00",
@@ -71,55 +47,49 @@ const classes = {
   },
   3: {
     1: {
-      name: "Ventures",
-      start: "13:00",
-      end: "17:00",
+      name: "CSSE497",
+      start: "10:00",
+      end: "10:30",
+      busy: true,
+    },
+    2: {
+      name: "Free",
+      start: "10:30",
+      end: "14:00",
+      busy: false,
+    },
+    3: {
+      name: "CSSE290",
+      start: "14:00",
+      end: "15:00",
       busy: true,
     },
   },
   4: {
     1: {
-      name: "CSSE373",
-      start: "8:00",
-      end: "10:00",
+      name: "CSSE477",
+      start: "10:00",
+      end: "12:00",
       busy: true,
     },
     2: {
-      name: "CSSE376",
-      start: "10:00",
-      end: "11:00",
-      busy: true,
-    },
-    3: {
       name: "Free",
-      start: "11:00",
+      start: "12:00",
       end: "13:00",
       busy: false,
     },
-    4: {
-      name: "CSSE375",
+    3: {
+      name: "CSSE480",
       start: "13:00",
-      end: "15:00",
+      end: "14:00",
       busy: true,
     },
   },
   5: {
     1: {
-      name: "CSSE376",
-      start: "10:00",
-      end: "11:00",
-      busy: true,
-    },
-    2: {
-      name: "Free",
-      start: "11:00",
-      end: "13:00",
-      busy: false,
-    },
-    3: {
-      name: "Ventures",
+      name: "CSSE480",
       start: "13:00",
-      end: "17:00",
+      end: "14:00",
       busy: true,
     },
   },
