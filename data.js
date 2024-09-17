@@ -7,6 +7,14 @@
 const classes = {
   1: {
     1: {
+      name: "CSSE480",
+      start: "13:00",
+      end: "14:00",
+      busy: true,
+    },
+  },
+  2: {
+    1: {
       name: "CSSE477",
       start: "10:00",
       end: "12:00",
@@ -24,21 +32,13 @@ const classes = {
       end: "14:00",
       busy: true,
     },
-  },
-  2: {
-    1: {
-      name: "CSSE480",
-      start: "13:00",
-      end: "14:00",
-      busy: true,
-    },
-    2: {
+    4: {
       name: "Free",
       start: "15:00",
       end: "19:30",
       busy: false,
     },
-    3: {
+    5: {
       name: "Concert Band",
       start: "19:30",
       end: "21:00",
